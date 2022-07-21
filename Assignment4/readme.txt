@@ -1,0 +1,1 @@
+Task is to use @decorator such that it gives the execution time of a code.
