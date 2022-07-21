@@ -1,0 +1,1 @@
+Task is to covert a given list into dictionary format.
