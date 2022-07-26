@@ -8,7 +8,7 @@ toc = int(input('''Choose from
 overallUnits = int(input("Enter the amount of units used : "))
 
 class Four():
-  def run(self,overallUnits):
+  def run(overallUnits):
     
     if toc == 1:
       result=(overallUnits*340)/100
@@ -32,5 +32,4 @@ class Four():
           print("Invalid type")
       raise NumberError
     
-Fr = Four()
-Fr.run(toc)
+Four.run(toc)
