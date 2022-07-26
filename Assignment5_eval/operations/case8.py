@@ -1,15 +1,14 @@
-print('''
+class Eight:
+  
+  def run(overallUnits):
+    print('''
       You have chosen 8.LEV : LT- Electric Vehicle Charging Stations
       ''')
-
-toc = int(input('''Choose from
+    toc = int(input('''Choose from
                 1 = Fixed Charges
                 OR
                 2 = Energy Charges
                 '''))
-
-class Eight():
-  def run(overallUnits):
 
     if toc==1:
       overallUnits = int(input("Enter the amount of units used : "))
@@ -36,7 +35,3 @@ class Eight():
         
       except NumberError:
         print("Invalid input")
-          
-        
-
-Eight.run(toc)

@@ -1,16 +1,14 @@
-print('''
+class Three:
+  def run():
+    print('''
       You have chosen 3. Non-RGP : Low Tension Service for Commercial and Industrial Purpose
       ''')
-
-toc = int(input('''
+    toc = int(input('''
 				Choose from
 				1 = Energy Charges
 				OR
 				2 = Fixed Charges
 				'''))
-
-class Three():
-  def run(overallUnits):
 
     if toc == 1:
       overallUnits = int(input("Enter the amount of units used : "))
@@ -46,5 +44,3 @@ class Three():
         elif type(toc) != int:
           print("Invalid type")
       raise NumberError
-    
-Three.run(toc)

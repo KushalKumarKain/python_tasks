@@ -1,4 +1,17 @@
-from operations import *
+from operations.case1 import One
+from operations.case2 import Two
+from operations.case3 import Three
+from operations.case4 import Four
+from operations.case5 import Five
+from operations.case6 import Six
+from operations.case7 import Seven
+from operations.case8 import Eight
+from operations.case9 import Nine
+from operations.case10 import Ten
+from operations.case11 import Eleven
+from operations.case12 import Twelve
+from operations.case13 import Thirteen
+from operations.case14 import Fourteen
 
 option = int(input('''
 Given below are the various categories and their respective costs for the filling of the light bill
@@ -23,44 +36,30 @@ Enter the code for selecting the category
 '''))
 
 
-if option == 1:
-  from operations import case1
-  
-elif option == 2:
-  from operations import case2
 
-elif option == 3:
-  from operations import case3
+dict = {1:One.run,
+        2:Two.run,
+        3:Three.run,
+        4:Four.run,
+        5:Five.run,
+        6:Six.run,
+        7:Seven.run,
+        8:Eight.run,
+        9:Nine.run,
+        10:Ten.run,
+        11:Eleven.run,
+        12:Twelve.run,
+        13:Thirteen.run,
+        14:Fourteen.run}
 
-elif option == 4:
-  from operations import case4
+def last():
+  try:
+      if option in dict.keys():
+          dict[option]()
+      else:
+          raise ValueError
 
-elif option == 5:
-  from operations import case5
-
-elif option == 6:
-  from operations import case6
-
-elif option == 7:
-  from operations import case7
-
-elif option == 8:
-  from operations import case8
-
-elif option == 9:
-  from operations import case9
-
-elif option == 10:
-  from operations import case10
-
-elif option == 11:
-  from operations import case11
-  
-elif option == 12:
-  from operations import case12
-
-elif option == 13:
-  from operations import case13
-  
-elif option == 14:
-  from operations import case14
+  except ValueError:
+      print("invalid input!")
+    
+last()

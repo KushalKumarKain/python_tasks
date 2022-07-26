@@ -1,7 +1,9 @@
-print('''
+class Twelve():
+  def run(overallUnits):
+    print('''
       You have chosen 12. HTMD-3 : High Tension Maximum Demand Temporary Supply
       ''')
-toc = int(input('''
+    toc = int(input('''
                 Choose from
                 1 = Energy
                 OR
@@ -11,9 +13,6 @@ toc = int(input('''
                 OR
                 4 = TOU Charge
                 ''')) 
-
-class Twelve():
-  def run(overallUnits):
     if toc==1:
       overallUnits = int(input("Enter the amount of kWs used upto 300 KW: "))
       result=(overallUnits*705)/100
@@ -61,5 +60,3 @@ class Twelve():
         
       except NumberError:
         print("Invalid input")
-
-Twelve.run(toc)

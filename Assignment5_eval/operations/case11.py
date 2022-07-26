@@ -1,7 +1,9 @@
-print('''
+class Eleven():
+  def run():
+    print('''
       You have chosen 11. HTMD-2 : High Tension Water and Sewage Pumping Stations run by AMC
       ''')
-toc = int(input('''
+    toc = int(input('''
 								Choose from
 								1 = Energy
 								OR
@@ -13,9 +15,6 @@ toc = int(input('''
 								OR
 								5 = Night Time
 								'''))
-
-class Eleven():
-  def run(overallUnits):
     if toc == 1:
       overallUnits = int(input("Enter the amount of kWs used upto 300 KW: "))
       result = (overallUnits*410)/100
@@ -74,5 +73,3 @@ class Eleven():
         
       except NumberError:
         print("Invalid input")
-
-Eleven.run(toc)

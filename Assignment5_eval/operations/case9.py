@@ -1,15 +1,14 @@
-print('''
+class Nine:  
+  def run(overallUnits):
+    print('''
       You have chosen 9. TMP : Low Tension Temporary Supply
       ''')
-toc = int(input('''
+    toc = int(input('''
                 Choose from
                 1 = Fixed Charges
                 OR
                 2 = Energy Charges
                 '''))
-
-class Nine():
-  def run(overallUnits):
     if toc==1:
       overallUnits = int(input("Enter the amount of kWs used : "))
       result=(overallUnits*25)
@@ -35,7 +34,3 @@ class Nine():
         
       except NumberError:
         print("Invalid input")
-          
-        
-
-Nine.run(toc)

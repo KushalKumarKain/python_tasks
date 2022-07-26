@@ -1,15 +1,15 @@
-print('''
+class One:
+  
+  def run():
+    print('''
       You have chosen 1. RGP : Residential General Purpose
       ''')
-
-InternalChoice = int(input('''
+    InternalChoice = int(input('''
                            Choose from 
                            1:RGP(Residential General Purpose) 
                            OR 
                            2:BPL(Below Poverty Line)
                            '''))
-class One():
-  def run(InternalChoice):
     
     overallUnits = int(input("Enter the amount of units used : "))
     toc = int(input('''
@@ -81,10 +81,3 @@ class One():
         
       except NumberError:
         print("Invalid input")
-
-# one = One()
-# one.InternalChoice()
-One.run(InternalChoice)
-
-
-

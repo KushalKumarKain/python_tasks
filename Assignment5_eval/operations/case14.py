@@ -1,8 +1,9 @@
-print('''
+class Fourteen():
+  def run():
+    print('''
       You have chosen 14. HTMD - Metro Traction
       ''')
-
-toc = int(input('''
+    toc = int(input('''
                 Choose from
                 1 = Energy Charges
                 OR
@@ -14,9 +15,6 @@ toc = int(input('''
                 OR
                 5 = Night Time (2200 Hrs To 0600 Hrs)
                 '''))
-
-class Fourteen():
-  def run(overallUnits):
     if toc==1:
       overallUnits = int(input("Enter the amount of kWs used: "))
       result=(overallUnits*355)/100
@@ -42,7 +40,7 @@ class Fourteen():
       result=(overallUnits*30)/100
       print("There is only Flat Phase available in this case adn its rate is 30 Paisa/unit so your bill comes out to be Rs", result)
     
-    elif toc==3:
+    elif Fourteen.toc==3:
       p_factor = int(input("Enter your power factor(in percentage): "))
       if p_factor > 90 & p_factor <= 95:
         amt1 = (p_factor-90) * 0.15
@@ -69,5 +67,3 @@ class Fourteen():
         
       except NumberError:
         print("Invalid input")
-    
-Fourteen.run(toc)

@@ -1,9 +1,8 @@
-print('''
-      You have chosen 5. LTMD-1 : Low Tension Maximum Demand for Residential Purpose
-      ''')
-
 class Five:
     def run():
+        print('''
+            You have chosen 5. LTMD-1 : Low Tension Maximum Demand for Residential Purpose
+            ''')
         try:
             kw_usage = float(input("Enter number of units in KW for billing demand: "))
             j = int(input("Enter contract demand in KW: "))
@@ -38,6 +37,3 @@ class Five:
                 print(f'The total bill comes out to be {total_amount}Rs.')
         except ValueError:
             print("invalid input!")
-
-
-Five.run()

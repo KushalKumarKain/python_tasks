@@ -1,16 +1,14 @@
-print('''
+class Four:
+  def run(overallUnits):
+    print('''
       You have chosen 4. LTP (AG) : Agriculture Service
-      ''')
-
-toc = int(input('''Choose from
+      ''')  
+    toc = int(input('''Choose from
                 1 = Energy Charges
                 OR
                 2 = Minimum Charges
                 '''))
-overallUnits = int(input("Enter the amount of units used : "))
-
-class Four():
-  def run(overallUnits):
+    overallUnits = int(input("Enter the amount of units used : "))
     
     if toc == 1:
       result=(overallUnits*340)/100
@@ -35,5 +33,3 @@ class Four():
         
       except NumberError:
         print("Invalid input")
-    
-Four.run(toc)

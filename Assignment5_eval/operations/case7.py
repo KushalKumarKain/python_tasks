@@ -1,17 +1,12 @@
-print('''
+class Seven:
+  def run():
+    print('''
       You have chosen 7. SL : Low Tension Tension Street Light Service
       ''')
-
-overallUnits = int(input("Enter the amount of units used : "))
-
-class Seven():
-
-  def run(overallUnits):
+    overallUnits = int(input("Enter the amount of units used : "))
     if overallUnits>0:
       result=(overallUnits*430)/100
-      print('''
-            
-            There is only Flat Phase, and the rate of it is 340 Paisa/unit, so your bill comes out to be Rs ''',result)
+      print('''There is only Flat Phase, and the rate of it is 340 Paisa/unit, so your bill comes out to be Rs ''',result)
     else:
       if overallUnits<0:
         class ErrorClass(Exception):
@@ -22,5 +17,3 @@ class Seven():
           pass
         print("Invalid input!!")
         raise NumberError
-
-Seven.run(overallUnits)
