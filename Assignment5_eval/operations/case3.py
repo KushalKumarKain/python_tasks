@@ -7,21 +7,42 @@ toc = int(input('''
 				2 = Fixed Charges
 				'''))
 
-overallUnits = int(input("Enter the amount of units used : "))
-                        
-if toc==1:
-	result1=(overallUnits*460)/100
-	print("There is only Flat Phase available in this case so your bill comes out to be  Rs", result1);
+class Three():
+  def run(overallUnits):
 
-if toc==2:
-	top = int(input('''What is your usage limit? 
-									5 for usage<=5 KW 
-									6 for usage>5KW & <= 15KW
-									'''))
-	if top==5:	
-		result2=overallUnits*70
-		print("Rates for Single Phase is 70Rs/month/KW, hence your bill comes out to be  Rs",result2)	
-  
-	if top==6:	
-		result3=overallUnits*90
-		print("Rates for Single Phase is 90Rs/month/KW, hence your bill comes out to be  Rs",result3)
+    if toc == 1:
+      overallUnits = int(input("Enter the amount of units used : "))
+      result = (overallUnits*460)/100
+      print("There is only Flat Phase available in this case so your bill comes out to be  Rs", result)
+  	
+    elif toc == 2:
+      top = int(input('''
+                      What is your usage limit? 
+                      3 for usage<=5 KW 
+                      4 for usage>5KW & <= 15KW
+                      '''))
+      kwUsage = int(input("Enter the amount of KW power used (must be between 1 to 15): "))
+      
+      if top==3:
+        result=kwUsage*70
+        print("Rates for Single Phase is 70Rs/month/KW, hence your bill comes out to be  Rs",result)
+      
+      elif top==4:
+        result=kwUsage*90
+        print("Rates for Single Phase is 90Rs/month/KW, hence your bill comes out to be  Rs",result)
+
+    else:
+      class ErrorClass(Exception):
+        """For all exceptions"""
+        pass
+      class NumberError(ErrorClass):
+        """Raised when toc input is invalid"""
+        pass
+      
+        if toc != 1 | 2 :
+          print("Invalid input")
+        elif type(toc) != int:
+          print("Invalid type")
+      raise NumberError
+    
+Three.run(toc)
