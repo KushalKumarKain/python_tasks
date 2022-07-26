@@ -1,5 +1,6 @@
-print("")
-print("You have chosen 7. SL : Low Tension Tension Street Light Service")
+print('''
+      You have chosen 7. SL : Low Tension Tension Street Light Service
+      ''')
 
 overallUnits = int(input("Enter the amount of units used : "))
 

@@ -1,4 +1,7 @@
-print("You have chosen 14. HTMD - Metro Traction")
+print('''
+      You have chosen 14. HTMD - Metro Traction
+      ''')
+
 toc = int(input('''
                 Choose from
                 1 = Energy Charges

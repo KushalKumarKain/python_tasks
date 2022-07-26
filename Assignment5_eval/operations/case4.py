@@ -1,4 +1,6 @@
-print("You have chosen 4. LTP (AG) : Agriculture Service")
+print('''
+      You have chosen 4. LTP (AG) : Agriculture Service
+      ''')
 
 toc = int(input('''Choose from
                 1 = Energy Charges

@@ -1,4 +1,7 @@
-print ("You have chosen 10. HTMD-1 : High Tension Maximum Demand")
+print('''
+      You have chosen 10. HTMD-1 : High Tension Maximum Demand
+      ''')
+
 toc = int(input('''Choose from
 								1 = Energy
 								OR

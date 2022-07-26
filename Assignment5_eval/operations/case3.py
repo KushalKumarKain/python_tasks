@@ -1,4 +1,6 @@
-print("You have chosen 3. Non-RGP : Low Tension Service for Commercial and Industrial Purpose")
+print('''
+      You have chosen 3. Non-RGP : Low Tension Service for Commercial and Industrial Purpose
+      ''')
 
 toc = int(input('''
 				Choose from

@@ -1,4 +1,6 @@
-print("You have chosen 8.LEV : LT- Electric Vehicle Charging Stations")
+print('''
+      You have chosen 8.LEV : LT- Electric Vehicle Charging Stations
+      ''')
 
 toc = int(input('''Choose from
                 1 = Fixed Charges
