@@ -20,7 +20,7 @@ InternalChoice = int(input('''
 #     if (overallUnits<=50):
 #       result1 = (overallUnits*320)/100
 #       print("Rate till first 50 units is 320 Paisa/unit. So, Your overall bill comes to be :  Rs ", result1)
-#     elif overallUnits>50 & overallUnits<=200:
+#     elif overallUnits>50 and overallUnits<=200:
 #       ind_units=overallUnits-50
 #       result2 = ((ind_units*395)+16000)/100
 #       print("Rates after first 50 units and next 150 units is 395 Paisa/unit. So, Your overall bill comes to be :  Rs", result2)
@@ -57,7 +57,7 @@ InternalChoice = int(input('''
 #     if (overallUnits<=50):
 #       result6 = (overallUnits*150)/100
 #       print("Rate till first 50 units is 150 Paisa/unit. So, Your overall bill comes to be :  Rs", result6)
-#     elif overallUnits>=51 & overallUnits<200:
+#     elif overallUnits>=51 and overallUnits<200:
 #       ind_units=overallUnits-50
 #       result7 = ((ind_units*395)+7500)/100
 #       print("Rates after first 50 units and next 150 units is 395 Paisa/unit. So, Your overall bill comes to be :  Rs", result7)
@@ -79,7 +79,7 @@ class One():
   # def run(self, InternalChoice, toc, overallUnits):
   #   pass
   
-  def InternalChoice():
+  def run(InternalChoice):
     overallUnits = int(input("Enter the amount of units used : "))
     toc = int(input('''
                   Choose from 
@@ -88,22 +88,22 @@ class One():
                   2 = Fixed Charges
                   '''))
     
-    if InternalChoice == 1 & toc == 1 & overallUnits<=50:
+    if InternalChoice == 1 and toc == 1 and overallUnits<=50:
       result = (overallUnits*320)/100
       print("Rate till first 50 units is 320 Paisa/unit. So, Your overall bill comes to be :  Rs ", result)
 
-    elif InternalChoice == 1 & toc == 1 & (overallUnits>50 & overallUnits<=200):
+    elif InternalChoice == 1 and toc == 1 and (overallUnits>50 and overallUnits<=200):
       ind_units=overallUnits-50
       result = ((ind_units*395)+16000)/100
       print("Rates after first 50 units and next 150 units is 395 Paisa/unit. So, Your overall bill comes to be :  Rs", result)
       
-    elif InternalChoice == 1 & toc == 1 & overallUnits>200:
+    elif InternalChoice == 1 and toc == 1 and overallUnits>200:
       ind_units = overallUnits-200
       result = ((ind_units*500)+75250)/100
       print("Rates after first 200 units is 500 Paisa/unit. So, Your overall bill comes to be :  Rs", result)
 
 
-    if InternalChoice == 1 & toc == 2:
+    elif InternalChoice == 1 and toc == 2:
       top = int(input('''
                   Type of phase? 
                   1 = Single Phase , 
@@ -113,32 +113,47 @@ class One():
         result = overallUnits*25
         print("Rates for Single Phase is 25Rs/month/installation, hence your bill comes out to be Rs",result)
       
-      if top == 2:
+      elif top == 2:
         result = overallUnits*65
         print("Rates for Single Phase is 65Rs/month/installation, hence your bill comes out to be Rs",result)
     
-    elif InternalChoice == 2 & toc == 1 & overallUnits<=50:
+    elif InternalChoice == 2 and toc == 1 and overallUnits<=50:
       result = (overallUnits*150)/100
       print("Rate till first 50 units is 150 Paisa/unit. So, Your overall bill comes to be :  Rs", result)
     
-    elif InternalChoice == 2 & toc == 1 & (overallUnits>=51 & overallUnits<200):
+    elif InternalChoice == 2 and toc == 1 and (overallUnits>=51 and overallUnits<200):
       ind_units=overallUnits-50
       result = ((ind_units*395)+7500)/100
       print("Rates after first 50 units and next 150 units is 395 Paisa/unit. So, Your overall bill comes to be :  Rs", result)
       
-    elif InternalChoice == 2 & toc == 1 & overallUnits>200:
+    elif InternalChoice == 2 and toc == 1 and overallUnits>200:
       ind_units = overallUnits-200
       result = ((ind_units*500)+66750)/100
       print("Rates after first 200 units is 500 Paisa/unit. So, Your overall bill comes to be :  Rs", result)
 
-    elif InternalChoice == 2 & toc == 2:
+    elif InternalChoice == 2 and toc == 2:
       result = (overallUnits*5)
       print("There is only Flat Phase available in this case so your bill comes out to be  Rs", result)
 
+    else:
+      class ErrorClass(Exception):
+        """For all exceptions"""
+        pass
+      class NumberError(ErrorClass):
+        """Raised when toc input is invalid"""
+        pass
+      try:
+        if (toc or InternalChoice) != 1 | 2 :
+          raise NumberError 
+        elif type(toc or InternalChoice) != int:
+          raise NumberError
+        
+      except NumberError:
+        print("Invalid input")
 
 # one = One()
 # one.InternalChoice()
-One.InternalChoice()
+One.run(InternalChoice)
 
 
 
