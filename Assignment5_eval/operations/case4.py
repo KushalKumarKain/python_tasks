@@ -25,11 +25,13 @@ class Four():
       class NumberError(ErrorClass):
         """Raised when toc input is invalid"""
         pass
-      
+      try:
         if toc != 1 | 2 :
-          print("Invalid input")
+          raise NumberError 
         elif type(toc) != int:
-          print("Invalid type")
-      raise NumberError
+          raise NumberError
+        
+      except NumberError:
+        print("Invalid input")
     
 Four.run(toc)
