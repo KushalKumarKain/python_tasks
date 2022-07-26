@@ -1,66 +1,43 @@
-print("You have chosen 5. LTMD-1 : Low Tension Maximum Demand for Residential Purpose \n");
-                # int max_demand;
-                # int c_demand;
-                # int p_factor;
+print('''
+      You have chosen 5. LTMD-1 : Low Tension Maximum Demand for Residential Purpose
+      ''')
 
-maxDemand = int(input("Enter your maximum demand record during the month:"))
+class Five:
+    def run():
+        try:
+            kw_usage = float(input("Enter number of units in KW for billing demand: "))
+            j = int(input("Enter contract demand in KW: "))
+            k = float(input("Enter power factor in percentage(%): "))
 
-if maxDemand>0:
-	conDemand = int(input("Enter the maximum KW for the supply of which TPL has provided facility to the consumer:")*0.85)
-  list[3] = {maxDemand, conDemand, 6}
-    bill_demand = list
-      for i = 1; i < 3; i+
-			
-        if bill_demand < [i] :
-	        bill_demand = [i]
+            if kw_usage < 0:
+                raise ValueError
+            elif (kw_usage > j):
+                if kw_usage <= 50:
+                    energy_charges = (kw_usage * 425) + (kw_usage * 4.65)
+                else:
+                    energy_charges = (kw_usage * 425) + (kw_usage * 4.80)
+            elif kw_usage <= 50:
+                energy_charges = (kw_usage * 150) + (kw_usage * 4.65)
+            elif (kw_usage > 50 and kw_usage <= 80):
+                energy_charges = ((50 * 150) + ((kw_usage - 50) * 185)) + (kw_usage * 4.80)
+            elif (kw_usage > 80):
+                energy_charges = ((50 * 150) + (30 * 185) + ((kw_usage - 80) * 245)) + (kw_usage * 4.80)
 
-          print("maximum Billng demand: ", bill_demand);
+            if k < 0:
+                raise ValueError
+            elif (k > 100):
+                raise ValueError
+            elif k <= 90:
+                total_amount = (kw_usage * 0.03) + energy_charges
+                print(f'The total bill comes out to be {total_amount}Rs.')
+            elif (k > 90 and k <= 95):
+                total_amount = (kw_usage * 0.0015) + energy_charges
+                print(f'The total bill comes out to be {total_amount}Rs.')
+            elif (k > 95):
+                total_amount = (kw_usage * 0.0027) + energy_charges
+                print(f'The total bill comes out to be {total_amount}Rs.')
+        except ValueError:
+            print("invalid input!")
 
-                        int unit;
-                        float amt1, amt2, amt3, amt;
-    
-                        printf("\n Your Energy Charge Rs:%0.2f", (amt1 / 100));
-    
-                            if (bill_demand <= 50)
-                                {
-                                    amt2 = bill_demand * 150;
-                                }
-                            
-                            else if (bill_demand > 50 && bill_demand <= 80)
-                                {
-                                    amt2 = 7500+((bill_demand-50) * 185);
-                                }
 
-                            else if (bill_demand > 80 && bill_demand <= c_demand)
-                                {
-                                    amt2 = 14800 +((bill_demand-80) * 245);
-                                }
-
-                            if(bill_demand>c_demand)
-                                {
-                                    amt2 = (bill_demand-c_demand) * 350;
-                                }
-                
-                                printf("\n Your Fixed Charge Rs:%0.2f", amt2);
-                                printf("\nEnter your power factor(in percentage):");
-                                scanf("%d", &p_factor);
-                                
-
-                            if (p_factor > 90 && p_factor <= 95)
-                                {
-                                    amt3 = (p_factor-90) * 0.15;
-                                }
-                            
-                            else if (p_factor > 95)
-                                {
-                                    amt3 = (100-p_factor) * 0.27;
-                                }
-
-                                else if (p_factor < 90)
-                                {
-                                    amt3 = (90-p_factor) * 3;
-                                }
-                            
-                            printf("\n Your power factor Rs:%0.2f", amt3 / 100);
-                            amt = amt1 + amt2 + amt3;
-                            printf("\n Electricity Bill RS :%0.2f", amt);
+Five.run()

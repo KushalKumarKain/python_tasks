@@ -1,50 +1,38 @@
-print("You have chosen 6. LTMD-2 : Low Tension Maximum Demand for other than residential purpose")
-                # int max_demand;
-                # int c_demand;
-                # int p_factor;
-                
-max_demand = int(input("Enter your maximum demand record during the month:  "))
-                
-                
-if max_demand>0:
-    c_demand = int(input("Enter the maximum KW for the supply of which TPL has provided facility to the consumer: ")*0.85)
+class Six:
+    def run():
+        try:
+            kw_usage = float(input("enter number of units in KW for billing demand:"))
+            j = int(input("enter contract demand in KW:"))
+            k = float(input("enter power factor in percentage(%):"))
 
-  arr[3] = {max_demand, c_demand, 6}
-  bill_demand = arr[0]
+            if kw_usage < 0:
+                raise ValueError
+            elif (kw_usage > j):
+                if kw_usage <= 50:
+                    energy_charges = (kw_usage * 425) + (kw_usage * 4.80)
+                else:
+                    energy_charges = (kw_usage * 425) + (kw_usage * 5.00)
+            elif kw_usage <= 50:
+                energy_charges = (kw_usage * 175) + (kw_usage * 4.80)
+            elif (kw_usage > 50 and kw_usage <= 80):
+                energy_charges = ((50 * 175) + ((kw_usage - 50) * 230)) + (kw_usage * 5.00)
+            elif (kw_usage > 80):
+                energy_charges = ((50 * 175) + (30 * 230) + ((kw_usage - 80) * 300)) + (kw_usage * 5.00)
 
-    for (i = 1; i < 3; i++)
-      if (bill_demand < arr[i]):
-        bill_demand = arr[i]
-        print("Maximum Billng demand: ", bill_demand)
+            if k < 0:
+                raise ValueError
+            elif (k > 100):
+                raise ValueError
+            elif k <= 90:
+                total_amount = (kw_usage * 0.03) + energy_charges
+                print(f'you have to pay {total_amount}Rs.')
+            elif (k > 90 and k <= 95):
+                total_amount = (kw_usage * 0.0015) + energy_charges
+                print(f'you have to pay {total_amount}Rs.')
+            elif (k > 95):
+                total_amount = (kw_usage * 0.0027) + energy_charges
+                print(f'you have to pay {total_amount}Rs.')
+        except ValueError:
+            print("invalid input!")
 
-    print("Your Energy Charge Rs ", ((amt1*0.2) / 100))
-    if (bill_demand <= 50):
-      amt2 = bill_demand * 175;
-
-    elif (bill_demand > 50 & bill_demand <= 80):
-      amt2 = 7500+((bill_demand-50) * 230)
-
-    elif (bill_demand > 80 & bill_demand <= c_demand):    
-      amt2 = 14800 +((bill_demand-80) * 300)
-            
-
-    if(bill_demand>c_demand):        
-      amt2 = (bill_demand-c_demand) * 425;
-
-      print("Your Fixed Charge Rs ", amt2*0.2);
-    
-    p_factor = int(input("Enter your power factor(in percentage) "))
-    
-    if (p_factor > 90 & p_factor <= 95):
-      amt3 = (p_factor-90) * 0.15;
-
-    elif (p_factor > 95):
-      amt3 = (100-p_factor) * 0.27;
-
-    elif (p_factor < 90):
-      amt3 = (90-p_factor) * 3;
-            
-        
-    print("Your power factor Rs ", (amt3*0.2) / 100);
-    amt = amt1 + amt2 + amt3;
-    print("Electricity Bill Rs ", amt*0.2)
+Six.run()
