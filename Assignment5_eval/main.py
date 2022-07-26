@@ -35,31 +35,30 @@ Given below are the various categories and their respective costs for the fillin
 Enter the code for selecting the category
 '''))
 
+dict = {1: One.run,
+        2: Two.run,
+        3: Three.run,
+        4: Four.run,
+        5: Five.run,
+        6: Six.run,
+        7: Seven.run,
+        8: Eight.run,
+        9: Nine.run,
+        10: Ten.run,
+        11: Eleven.run,
+        12: Twelve.run,
+        13: Thirteen.run,
+        14: Fourteen.run}
 
-
-dict = {1:One.run,
-        2:Two.run,
-        3:Three.run,
-        4:Four.run,
-        5:Five.run,
-        6:Six.run,
-        7:Seven.run,
-        8:Eight.run,
-        9:Nine.run,
-        10:Ten.run,
-        11:Eleven.run,
-        12:Twelve.run,
-        13:Thirteen.run,
-        14:Fourteen.run}
 
 def last():
   try:
-      if option in dict.keys():
-          dict[option]()
-      else:
-          raise ValueError
-
+    if option in dict.keys():
+      dict[option]()
+    else:
+      raise ValueError
   except ValueError:
-      print("invalid input!")
-    
+    print("Invalid Input")
+
+
 last()
