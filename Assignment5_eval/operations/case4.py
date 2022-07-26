@@ -6,15 +6,7 @@ toc = int(input('''Choose from
                 2 = Minimum Charges
                 '''))
 overallUnits = int(input("Enter the amount of units used : "))
-# if toc==1:
-#   result=(overallUnits*340)/100
-#   print("There is only Flat Phase, and the rate of it is 340 Paisa/unit, so your bill comes out to be Rs", result)
 
-# if toc==2:
-# 	result=(overallUnits*10)
-# 	print("There is only per bhp phase, and the rate of it is 10 Rs/unit, so your bill comes out to be Rs", result)
-    
-    
 class Four():
   def run(self,overallUnits):
     
@@ -27,9 +19,14 @@ class Four():
       print("There is only per bhp phase, and the rate of it is 10 Rs/unit, so your bill comes out to be Rs", result)
     
     else:
-      class NumberError():
+      class ErrorClass(Exception):
+        """For all exceptions"""
+        pass
+      class NumberError(ErrorClass):
         """Raised when toc input is invalid"""
-        if toc != 1 | 2:
+        pass
+      
+        if toc != 1 | 2 :
           print("Invalid input")
         elif type(toc) != int:
           print("Invalid type")
