@@ -22,13 +22,15 @@ class Thirteen:
 
             if top == 1:
                 result = overall_units * 25
-                print("Rates for Billing Demand up to contract demand is 25Rs/month/KW."
-                      "Hence your bill comes out to be Rs", result)
+                print(
+                    "Rates for Billing Demand up to contract demand is 25Rs/month/KW."
+                    "Hence your bill comes out to be Rs", result)
 
             elif top == 2:
                 result = overall_units * 50
-                print("Rates for Billing Demand in excess of contract demand is 50Rs/month/KW."
-                      "Hence your bill comes out to be Rs", result)
+                print(
+                    "Rates for Billing Demand in excess of contract demand is 50Rs/month/KW."
+                    "Hence your bill comes out to be Rs", result)
 
         else:
 
@@ -41,7 +43,7 @@ class Thirteen:
             try:
                 if toc != 1 | 2:
                     raise NumberError
-                elif type(toc) != int:
+                elif not isinstance(toc, int):
                     raise NumberError
 
             except NumberError:

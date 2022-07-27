@@ -15,29 +15,22 @@ from operations.case14 import Fourteen
 
 option = int(
     input(
-        """
-Given below are the various categories and their respective costs for the filling of the light bill
-
-1. RGP : Residential General Purpose
-2. GLP : General Lighting Purpose
-3. Non-RGP : Low Tension Service for Commercial and Industrial Purpose
-4. LTP (AG) : Agriculture Service
-5. LTMD-1 : Low Tension Maximum Demand for Residential Purpose
-6. LTMD-2 : Low Tension Maximum Demand for other than residential purpose
-7. SL : Low Tension Tension Street Light Service
-8. LEV : LT- Electric Vehicle Charging Stations
-9. TMP : Low Tension Temporary Supply
-10. HTMD-1 : High Tension Maximum Demand
-11. HTMD-2 : High Tension Water and Sewage Pumping Stations run by AMC
-12. HTMD-3 : High Tension Maximum Demand Temporary Supply
-13. EV: HT- Electric Vehicle Charging Stations
-14. HMTD - Metro Traction
-
-
-Enter the code for selecting the category
-"""
-    )
-)
+        "Given below are the various categories and their respective costs for the filling of the light bill"
+        "1. RGP : Residential General Purpose"
+        "2. GLP : General Lighting Purpose"
+        "3. Non-RGP : Low Tension Service for Commercial & Industrial Purpose"
+        "4. LTP (AG) : Agriculture Service"
+        "5. LTMD-1 : Low Tension Maximum Demand for Residential Purpose"
+        "6. LTMD-2 : Low Tension Maximum Demand for other than residential purpose"
+        "7. SL : Low Tension Tension Street Light Service"
+        "8. LEV : LT- Electric Vehicle Charging Stations"
+        "9. TMP : Low Tension Temporary Supply"
+        "10. HTMD-1 : High Tension Maximum Demand"
+        "11. HTMD-2 : High Tension Water and Sewage Pumping Stations run by AMC"
+        "12. HTMD-3 : High Tension Maximum Demand Temporary Supply"
+        "13. EV: HT- Electric Vehicle Charging Stations"
+        "14. HMTD - Metro Traction"
+        "Enter the code for selecting the category"))
 
 dict = {
     1: One.run,

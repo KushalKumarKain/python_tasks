@@ -68,7 +68,7 @@ class Eleven:
             try:
                 if toc != 1 | 2:
                     raise NumberError
-                elif type(toc) != int:
+                elif not isinstance(toc, int):
                     raise NumberError
 
             except NumberError:
