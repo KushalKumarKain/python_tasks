@@ -6,66 +6,43 @@ class Fourteen:
       """
         )
         toc = int(
-            input(
-                """
-                Choose from
-                1 = Energy Charges
-                OR
-                2 = Fixed Charges
-                OR
-                3 = Power Factor
-                OR
-                4 = TOU Charge
-                OR
-                5 = Night Time (2200 Hrs To 0600 Hrs)
-                """
-            )
-        )
+            input("Choose"
+                  "1 = Energy Charges | 2 = Fixed Charges | 3 = Power Factor"
+                  "4 = TOU Charge | 5 = Night Time (2200 Hrs To 0600 Hrs)"))
+
         if toc == 1:
-            overallUnits = int(input("Enter the amount of kWs used: "))
-            result = (overallUnits * 355) / 100
-            print(
-                "There is only Flat Phase available in this case adn its rate is 355 Paisa/unit so your bill comes out to be Rs",
-                result,
-            )
+            overall_units = int(input("Enter the amount of kWs used: "))
+            result = (overall_units * 355) / 100
+            print("There is only Flat Phase available at 355 Paisa/unit."
+                  "So your bill comes out to be Rs", result)
 
         elif toc == 2:
-            overallUnits = int(input("Enter the amount of kWs used: "))
+            overall_units = int(input("Enter the amount of kWs used: "))
             a = int(
-                input(
-                    "Is it 1. For Billing demand up to and including contract demand OR 2. For Billing demand in excess of contract demand"
-                )
-            )
+                input("1. For Billing demand up to including contract demand |"
+                      "2. For Billing demand in excess of contract demand"))
             if a == 1:
-                result = overallUnits * 335
-                print(
-                    "For this option, the rate is set to be 335/KW/month, so your bill comes to be Rs",
-                    result,
-                )
+                result = overall_units * 335
+                print("For this option, the rate is set to be 335/KW/month."
+                      "So your bill comes to be Rs", result)
             elif a == 2:
-                result = overallUnits * 385
-                print(
-                    "For this option, the rate is set to be 385/KW/month, so your bill comes to be Rs",
-                    result,
-                )
+                result = overall_units * 385
+                print("For this option, the rate is set to be 385/KW/month."
+                      "So your bill comes to be Rs", result)
 
         elif toc == 4:
-            overallUnits = int(input("Enter the amount of kWs used: "))
-            result = (overallUnits * 60) / 100
-            print(
-                "There is only Flat Phase available in this case adn its rate is 60 Paisa/unit so your bill comes out to be Rs",
-                result,
-            )
+            overall_units = int(input("Enter the amount of kWs used: "))
+            result = (overall_units * 60) / 100
+            print("There is only Flat Phase available at 60 Paisa/unit."
+                  "So your bill comes out to be Rs", result)
 
         elif toc == 5:
-            overallUnits = int(input("Enter the amount of kWs used: "))
-            result = (overallUnits * 30) / 100
-            print(
-                "There is only Flat Phase available in this case adn its rate is 30 Paisa/unit so your bill comes out to be Rs",
-                result,
-            )
+            overall_units = int(input("Enter the amount of kWs used: "))
+            result = (overall_units * 30) / 100
+            print("There is only Flat Phase available at 30 Paisa/unit."
+                  "So your bill comes out to be Rs", result)
 
-        elif Fourteen.toc == 3:
+        elif toc == 3:
             p_factor = int(input("Enter your power factor(in percentage): "))
             if p_factor > 90 & p_factor <= 95:
                 amt1 = (p_factor - 90) * 0.15
@@ -82,12 +59,8 @@ class Fourteen:
             class ErrorClass(Exception):
                 """For all exceptions"""
 
-                pass
-
             class NumberError(ErrorClass):
                 """Raised when toc input is invalid"""
-
-                pass
 
             try:
                 if toc != 1 | 2:

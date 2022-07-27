@@ -1,75 +1,49 @@
 class Eleven:
     def run():
-        print(
-            """
-      You have chosen 11. HTMD-2 : High Tension Water and Sewage Pumping Stations run by AMC
-      """
-        )
+
+        print('''You chose
+              11. HTMD-2 : High Tension Water and Sewage Pumping Stations run by AMC
+              ''')
+
         toc = int(
-            input(
-                """
-								Choose from
-								1 = Energy
-								OR
-								2 = Fixed Charges
-								OR
-								3 = Power Factor
-								OR
-								4 = TOU Charge
-								OR
-								5 = Night Time
-								"""
-            )
-        )
+            input("Choose from	1 = Energy |"
+                  "2 = Fixed Charges | 3 = Power Factor |"
+                  "4 = TOU Charge | 5 = Night Time"))
+
         if toc == 1:
-            overallUnits = int(input("Enter the amount of kWs used upto 300 KW: "))
-            result = (overallUnits * 410) / 100
-            print(
-                "There is only Flat Phase available in this case adn its rate is 410 Paisa/unit so your bill comes out to be Rs",
-                result,
-            )
+            overall_units = int(
+                input("Enter the amount of kWs used upto 300 KW: "))
+            result = (overall_units * 410) / 100
+            print("There is only Flat Phase available at 410 Paisa/unit."
+                  "So your bill comes out to be Rs", result)
 
         elif toc == 2:
-            overallUnits = int(input("Enter the amount of kWs used: "))
+            overall_units = int(input("Enter the amount of kWs used: "))
             a = int(
-                input(
-                    """Is it
-										1. Fix charge/KW of billing Demand / month
-										OR
-										2. Excess Demand
-										"""
-                )
-            )
+                input("Is it 1. Fix charge/KW of billing Demand / month |"
+                      "2. Excess Demand"))
             if a == 1:
-                result = overallUnits * 225
-                print(
-                    "For this option, the rate is set to be 225/KW, so your bill comes to be Rs",
-                    result,
-                )
+                result = overall_units * 225
+                print("For this option, the rate is set to be 225/KW"
+                      "So your bill comes to be Rs", result)
             elif a == 2:
-                result = overallUnits * 285
-                print(
-                    "For this option, the rate is set to be 285/KW, so your bill comes to be Rs",
-                    result,
-                )
+                result = overall_units * 285
+                print("For this option, the rate is set to be 285/KW."
+                      "So your bill comes to be Rs", result)
             else:
                 raise NumberError
 
         elif toc == 4:
-            overallUnits = int(input("Enter the amount of kWs used: "))
-            result = (overallUnits * 60) / 100
-            print(
-                "There is only Flat Phase available in this case adn its rate is 60 Paisa/unit so your bill comes out to be Rs",
-                result,
-            )
+            overall_units = int(input("Enter the amount of kWs used: "))
+            result = (overall_units * 60) / 100
+            print("There is only Flat Phase available at 60 Paisa/unit."
+                  "So your bill comes out to be Rs", result)
 
         elif toc == 5:
-            overallUnits = int(input("Enter the amount of kWs used: "))
-            result = (overallUnits * 30) / 100
-            print(
-                "There is only Flat Phase available in this case adn its rate is 30 Paisa/unit so your bill comes out to be Rs",
-                result,
-            )
+            overall_units = int(input("Enter the amount of kWs used: "))
+            result = (overall_units * 30) / 100
+            print("There is only Flat Phase available at 30 Paisa/unit."
+                  "So your bill comes out to be Rs", result)
 
         elif toc == 3:
             p_factor = int(input("Enter your power factor(in percentage): "))
@@ -88,12 +62,8 @@ class Eleven:
             class ErrorClass(Exception):
                 """For all exceptions"""
 
-                pass
-
             class NumberError(ErrorClass):
                 """Raised when toc input is invalid"""
-
-                pass
 
             try:
                 if toc != 1 | 2:

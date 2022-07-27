@@ -4,11 +4,7 @@ class Ten:
         print("You have chosen 10. HTMD-1 : High Tension Maximum Demand")
 
         toc = int(
-            input(
-                "1 = Energy| 2 = Fixed Charges| 3 = Power"
-                "Factor| 4 = TOU Charge| 5 = Night Time"
-            )
-        )
+            input("1 = Energy| 2 = Fixed Charges| 3 = Power Factor| 4 = TOU Charge| 5 = Night Time"))
 
         if toc == 1:
             overall_units = int(input("Enter the amount of kWs used : "))

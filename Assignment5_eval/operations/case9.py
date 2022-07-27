@@ -1,47 +1,28 @@
 class Nine:
-    def run(overallUnits):
-        print(
-            """
-      You have chosen 9. TMP : Low Tension Temporary Supply
-      """
-        )
+    def run():
+        print("You have chosen 9. TMP : Low Tension Temporary Supply")
+
         toc = int(
-            input(
-                """
-                Choose from
-                1 = Fixed Charges
-                OR
-                2 = Energy Charges
-                """
-            )
-        )
+            input("Choose from1 = Fixed Charges |2 = Energy Charges"))
+
         if toc == 1:
-            overallUnits = int(input("Enter the amount of kWs used : "))
-            result = overallUnits * 25
-            print(
-                "The rare here is FIXED and it is 25 kw/day, so your bill comes out to be Rs",
-                result,
-            )
+            overall_units = int(input("Enter the amount of kWs used : "))
+            result = overall_units * 25
+            print("The rare here is FIXED and it is 25 kw/day"
+                  "So your bill comes out to be Rs", result)
 
         elif toc == 2:
-            overallUnits = int(input("Enter the amount of kWs used : "))
-            result = (overallUnits * 510) / 100
-            print(
-                "There is only Flat Phase, and the rate of it is 510 Paisa/unit, so your bill comes out to be Rs",
-                result,
-            )
+            overall_units = int(input("Enter the amount of kWs used : "))
+            result = (overall_units * 510) / 100
+            print("There is only Flat Phase at 510 Paisa/unit"
+                  "So your bill comes out to be Rs", result)
 
         else:
 
             class ErrorClass(Exception):
                 """For all exceptions"""
-
-                pass
-
             class NumberError(ErrorClass):
                 """Raised when toc input is invalid"""
-
-                pass
 
             try:
                 if toc != 1 | 2:
