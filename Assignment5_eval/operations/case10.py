@@ -1,4 +1,3 @@
-# pylint: disable=no-else-raise
 class Ten:
     def run():
         print("You have chosen 10. HTMD-1 : High Tension Maximum Demand")

@@ -1,4 +1,3 @@
-# pylint: disable=no-else-raise
 class Two:
     def run():
         print("You have chosen 2. GLP : General Lighting Purpose")

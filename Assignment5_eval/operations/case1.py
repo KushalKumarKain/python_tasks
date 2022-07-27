@@ -1,4 +1,3 @@
-# pylint: disable=chained-comparison
 class One:
     def run():
         print("You have chosen 1. RGP : Residential General Purpose")

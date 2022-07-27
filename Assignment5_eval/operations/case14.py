@@ -1,10 +1,8 @@
 class Fourteen:
     def run():
-        print(
-            """
-      You have chosen 14. HTMD - Metro Traction
-      """
-        )
+
+        print("You have chosen 14. HTMD - Metro Traction")
+
         toc = int(
             input("Choose"
                   "1 = Energy Charges | 2 = Fixed Charges | 3 = Power Factor"
@@ -18,14 +16,14 @@ class Fourteen:
 
         elif toc == 2:
             overall_units = int(input("Enter the amount of kWs used: "))
-            a = int(
+            temp = int(
                 input("1. For Billing demand up to including contract demand |"
                       "2. For Billing demand in excess of contract demand"))
-            if a == 1:
+            if temp == 1:
                 result = overall_units * 335
                 print("For this option, the rate is set to be 335/KW/month."
                       "So your bill comes to be Rs", result)
-            elif a == 2:
+            elif temp == 2:
                 result = overall_units * 385
                 print("For this option, the rate is set to be 385/KW/month."
                       "So your bill comes to be Rs", result)
